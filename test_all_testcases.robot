@@ -153,8 +153,8 @@ Type in invalid password
     Input Text   ${PASSWORDINPUT}       ***
 Assert Login Error
     sleep               3s
-    ${email_class}      Get Element Attribute       xpath=//form//div/span      class
-    Should Contain      ${email_class}              Error
+    ${error_class}      Get Element Attribute       xpath=//form//div/span      class
+    Should Contain      ${error_class}              Error
 Click on the submit button
     Click Element   ${SIGNINBUTTON}
 Assert dashboard
