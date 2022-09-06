@@ -62,6 +62,14 @@ Login to the system
     Assert dashboard
     [Teardown]  Close Browser
 
+Login to the system with invalid credential
+    Open login page
+    Type in invalid email
+    Type in invalid password
+    Click on the Submit button
+    Assert Login Error
+    [Teardown]  Close Browser
+
 Logout from the system
     Open login page
     Type in email
@@ -82,6 +90,18 @@ Create a player to database
     Type in new player info
     Submit new player to database
     [Teardown]  Close Browser
+
+Create a player to database with invalid data input
+    Open Login Page
+    Type In Email
+    Type In Password
+    Click On The Submit Button
+    Assert Dashboard
+    Click At The Add Player Button
+    Assert Add Player Page
+    Type In New Player Info with invalid data input
+    Submit New Player To Database
+    [Teardown]    close browser
 
 Edit a player data
     Open login page
@@ -127,6 +147,14 @@ Type in email
     Input Text   ${EMAILINPUT}   user07@getnada.com
 Type in password
     Input Text   ${PASSWORDINPUT}    Test-1234
+Type in invalid email
+    Input Text   ${EMAILINPUT}   example@example.com
+Type in invalid password
+    Input Text   ${PASSWORDINPUT}       ***
+Assert Login Error
+    sleep               3s
+    ${email_class}      Get Element Attribute       xpath=//form//div/span      class
+    Should Contain      ${email_class}              Error
 Click on the submit button
     Click Element   ${SIGNINBUTTON}
 Assert dashboard
@@ -156,6 +184,13 @@ Type in new player info
     Input Text      ${NEWPLAYER NAME}       example-1
     Click Element   ${NEWPLAYER LEG}
     Click Element   ${NEWPLAYER LEG LEFT}
+Type In New Player Info with invalid data input
+    Input Text      ${NEWPLAYER NAME}       example-1
+    Input Text      ${NEWPLAYER SURNAME}    example-1
+    Input Text      ${NEWPLAYER AGE}        mm,dd,yyyy
+    Input Text      ${NEWPLAYER MAINPOSITION}   example
+    ${CSS_VALUE}    GET ELEMENT ATTRIBUTE   xpath=//input[@name='age']/parent::div      class
+    Should Contain  ${CSS_VALUE}            error
 Submit new player to database
     Click Element   ${SUBMITBUTTON}
     Sleep           ${SECONDS}s
