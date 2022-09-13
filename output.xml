@@ -1,96 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220906 13:59:24.732" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220913 09:59:39.947" rpa="false" schemaversion="3">
 <suite id="s1" name="Yt Robotframework" source="C:\Users\danie\PycharmProjects\task_5_robot\yt_robotframework">
 <suite id="s1-s1" name="Test All Testcases" source="C:\Users\danie\PycharmProjects\task_5_robot\yt_robotframework\test_all_testcases.robot">
-<test id="s1-s1-t1" name="Login to the system with invalid credential" line="65">
+<test id="s1-s1-t1" name="Edit a player data" line="118">
 <kw name="Open login page">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220906 13:59:25.174" level="INFO">Opening browser 'Chrome' to base url 'https://scouts-test.futbolkolektyw.pl/en'.</msg>
-<status status="PASS" starttime="20220906 13:59:25.174" endtime="20220906 13:59:28.900"/>
+<msg timestamp="20220913 09:59:40.298" level="INFO">Opening browser 'Chrome' to base url 'https://scouts.futbolkolektyw.pl/en/'.</msg>
+<status status="PASS" starttime="20220913 09:59:40.298" endtime="20220913 09:59:42.616"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Scouts panel - sign in</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220906 13:59:28.908" level="INFO">Page title is 'Scouts panel - sign in'.</msg>
-<status status="PASS" starttime="20220906 13:59:28.900" endtime="20220906 13:59:28.909"/>
+<msg timestamp="20220913 09:59:42.621" level="INFO">Page title is 'Scouts panel - sign in'.</msg>
+<status status="PASS" starttime="20220913 09:59:42.616" endtime="20220913 09:59:42.622"/>
 </kw>
-<status status="PASS" starttime="20220906 13:59:25.174" endtime="20220906 13:59:28.909"/>
+<status status="PASS" starttime="20220913 09:59:40.297" endtime="20220913 09:59:42.622"/>
 </kw>
-<kw name="Type in invalid email">
+<kw name="Type in email">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${EMAILINPUT}</arg>
-<arg>example@example.com</arg>
+<arg>user07@getnada.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220906 13:59:28.911" level="INFO">Typing text 'example@example.com' into text field 'xpath=//*[@id='login']'.</msg>
-<status status="PASS" starttime="20220906 13:59:28.910" endtime="20220906 13:59:29.203"/>
+<msg timestamp="20220913 09:59:42.624" level="INFO">Typing text 'user07@getnada.com' into text field 'xpath=//*[@id='login']'.</msg>
+<status status="PASS" starttime="20220913 09:59:42.623" endtime="20220913 09:59:42.907"/>
 </kw>
-<status status="PASS" starttime="20220906 13:59:28.909" endtime="20220906 13:59:29.203"/>
+<status status="PASS" starttime="20220913 09:59:42.622" endtime="20220913 09:59:42.907"/>
 </kw>
-<kw name="Type in invalid password">
+<kw name="Type in password">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${PASSWORDINPUT}</arg>
-<arg>***</arg>
+<arg>Test-1234</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220906 13:59:29.204" level="INFO">Typing text '***' into text field 'xpath=//*[@id='password']'.</msg>
-<status status="PASS" starttime="20220906 13:59:29.204" endtime="20220906 13:59:29.325"/>
+<msg timestamp="20220913 09:59:42.909" level="INFO">Typing text 'Test-1234' into text field 'xpath=//*[@id='password']'.</msg>
+<status status="PASS" starttime="20220913 09:59:42.908" endtime="20220913 09:59:43.181"/>
 </kw>
-<status status="PASS" starttime="20220906 13:59:29.203" endtime="20220906 13:59:29.325"/>
+<status status="PASS" starttime="20220913 09:59:42.908" endtime="20220913 09:59:43.182"/>
 </kw>
 <kw name="Click on the submit button">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${SIGNINBUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220906 13:59:29.326" level="INFO">Clicking element 'xpath=//*[text()='Sign in']'.</msg>
-<status status="PASS" starttime="20220906 13:59:29.326" endtime="20220906 13:59:29.383"/>
+<msg timestamp="20220913 09:59:43.185" level="INFO">Clicking element 'xpath=//*[text()='Sign in']'.</msg>
+<status status="PASS" starttime="20220913 09:59:43.184" endtime="20220913 09:59:43.327"/>
 </kw>
-<status status="PASS" starttime="20220906 13:59:29.326" endtime="20220906 13:59:29.383"/>
+<status status="PASS" starttime="20220913 09:59:43.182" endtime="20220913 09:59:43.328"/>
 </kw>
-<kw name="Assert Login Error">
+<kw name="Assert dashboard">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PAGELOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220913 09:59:43.329" endtime="20220913 09:59:44.428"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>PANEL SKAUTINGOWY</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220913 09:59:44.433" level="INFO">Page title is 'PANEL SKAUTINGOWY'.</msg>
+<status status="PASS" starttime="20220913 09:59:44.428" endtime="20220913 09:59:44.433"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>alert.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220913 09:59:44.820" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="alert.png"&gt;&lt;img src="alert.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220913 09:59:44.434" endtime="20220913 09:59:44.820"/>
+</kw>
+<status status="PASS" starttime="20220913 09:59:43.328" endtime="20220913 09:59:44.821"/>
+</kw>
+<kw name="Click at the Players link">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PLAYERS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220913 09:59:44.822" level="INFO">Clicking element 'xpath=//div[@role='presentation']//ul[1]/div[2]'.</msg>
+<status status="PASS" starttime="20220913 09:59:44.822" endtime="20220913 09:59:44.941"/>
+</kw>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.title.includes("Players")</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220913 09:59:44.942" endtime="20220913 09:59:45.487"/>
+</kw>
+<status status="PASS" starttime="20220913 09:59:44.822" endtime="20220913 09:59:45.488"/>
+</kw>
+<kw name="Select a player page in players list">
+<kw name="Set Variable" library="BuiltIn">
+<var>${CLICK NEXTPAGE TIMES}</var>
+<arg>4</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220913 09:59:45.490" level="INFO">${CLICK NEXTPAGE TIMES} = 4</msg>
+<status status="PASS" starttime="20220913 09:59:45.489" endtime="20220913 09:59:45.490"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${_}</var>
+<value>${CLICK NEXTPAGE TIMES}</value>
+<iter>
+<var name="${_}">0</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PLAYER NEXTPAGE BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220913 09:59:45.491" level="INFO">Clicking element 'xpath=//button[@id='pagination-next']'.</msg>
+<status status="PASS" starttime="20220913 09:59:45.490" endtime="20220913 09:59:45.560"/>
+</kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
+<arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220906 13:59:32.394" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220906 13:59:29.384" endtime="20220906 13:59:32.394"/>
+<msg timestamp="20220913 09:59:46.569" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220913 09:59:45.560" endtime="20220913 09:59:46.569"/>
 </kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${email_class}</var>
-<arg>xpath=//form//div/span</arg>
-<arg>class</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220906 13:59:32.419" level="INFO">${email_class} = MuiTypography-root MuiTypography-caption MuiTypography-colorError MuiTypography-gutterBottom</msg>
-<status status="PASS" starttime="20220906 13:59:32.394" endtime="20220906 13:59:32.419"/>
+<status status="PASS" starttime="20220913 09:59:45.490" endtime="20220913 09:59:46.569"/>
+</iter>
+<iter>
+<var name="${_}">1</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PLAYER NEXTPAGE BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220913 09:59:46.570" level="INFO">Clicking element 'xpath=//button[@id='pagination-next']'.</msg>
+<status status="PASS" starttime="20220913 09:59:46.570" endtime="20220913 09:59:46.640"/>
 </kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${email_class}</arg>
-<arg>Error</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220906 13:59:32.419" endtime="20220906 13:59:32.420"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220913 09:59:47.653" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220913 09:59:46.641" endtime="20220913 09:59:47.653"/>
 </kw>
-<status status="PASS" starttime="20220906 13:59:29.383" endtime="20220906 13:59:32.420"/>
+<status status="PASS" starttime="20220913 09:59:46.569" endtime="20220913 09:59:47.653"/>
+</iter>
+<iter>
+<var name="${_}">2</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PLAYER NEXTPAGE BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220913 09:59:47.655" level="INFO">Clicking element 'xpath=//button[@id='pagination-next']'.</msg>
+<status status="PASS" starttime="20220913 09:59:47.654" endtime="20220913 09:59:47.753"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220913 09:59:48.761" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220913 09:59:47.753" endtime="20220913 09:59:48.761"/>
+</kw>
+<status status="PASS" starttime="20220913 09:59:47.654" endtime="20220913 09:59:48.761"/>
+</iter>
+<iter>
+<var name="${_}">3</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PLAYER NEXTPAGE BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220913 09:59:48.761" level="INFO">Clicking element 'xpath=//button[@id='pagination-next']'.</msg>
+<status status="PASS" starttime="20220913 09:59:48.761" endtime="20220913 09:59:48.787"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220913 09:59:49.792" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220913 09:59:48.787" endtime="20220913 09:59:49.792"/>
+</kw>
+<status status="PASS" starttime="20220913 09:59:48.761" endtime="20220913 09:59:49.792"/>
+</iter>
+<status status="PASS" starttime="20220913 09:59:45.490" endtime="20220913 09:59:49.792"/>
+</for>
+<kw name="Evaluate" library="BuiltIn">
+<var>${NUMBER}</var>
+<arg>${CLICK NEXTPAGE TIMES} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220913 09:59:49.793" level="INFO">${NUMBER} = 5</msg>
+<status status="PASS" starttime="20220913 09:59:49.792" endtime="20220913 09:59:49.793"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ENDWITH}</var>
+<arg>Page ${NUMBER}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220913 09:59:49.793" level="INFO">${ENDWITH} = Page 5</msg>
+<status status="PASS" starttime="20220913 09:59:49.793" endtime="20220913 09:59:49.793"/>
+</kw>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.title.includes('${ENDWITH}')</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<msg timestamp="20220913 09:59:55.354" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220913 09:59:55.356" level="FAIL">Condition 'return document.title.includes('Page 5')' did not become true in 5 seconds.</msg>
+<status status="FAIL" starttime="20220913 09:59:49.793" endtime="20220913 09:59:55.358"/>
+</kw>
+<status status="FAIL" starttime="20220913 09:59:45.488" endtime="20220913 09:59:55.359"/>
+</kw>
+<kw name="choose a player row and Edit player data">
+<status status="NOT RUN" starttime="20220913 09:59:55.360" endtime="20220913 09:59:55.360"/>
+</kw>
+<kw name="Save to database">
+<status status="NOT RUN" starttime="20220913 09:59:55.360" endtime="20220913 09:59:55.360"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220906 13:59:32.420" endtime="20220906 13:59:34.561"/>
+<status status="PASS" starttime="20220913 09:59:55.361" endtime="20220913 09:59:57.488"/>
 </kw>
-<status status="PASS" starttime="20220906 13:59:25.172" endtime="20220906 13:59:34.561"/>
+<status status="FAIL" starttime="20220913 09:59:40.297" endtime="20220913 09:59:57.488">Condition 'return document.title.includes('Page 5')' did not become true in 5 seconds.</status>
 </test>
 <doc>Suite description #automated tests for scout website</doc>
-<status status="PASS" starttime="20220906 13:59:24.773" endtime="20220906 13:59:34.564"/>
+<status status="FAIL" starttime="20220913 09:59:39.995" endtime="20220913 09:59:57.490"/>
 </suite>
-<status status="PASS" starttime="20220906 13:59:24.735" endtime="20220906 13:59:34.568"/>
+<status status="FAIL" starttime="20220913 09:59:39.950" endtime="20220913 09:59:57.494"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Yt Robotframework">Yt Robotframework</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test All Testcases">Yt Robotframework.Test All Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Yt Robotframework">Yt Robotframework</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Test All Testcases">Yt Robotframework.Test All Testcases</stat>
 </suite>
 </statistics>
 <errors>
